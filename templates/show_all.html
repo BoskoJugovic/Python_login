@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if ulogovan %}
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+    {% endif %}
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <td>Username</td>
+            <td>Password</td>
+            <td>Email</td>
+            <td>Godina studija</td>
+            <td>JMBG</td>
+        </tr>
+        {% for r in rez %}
+        <tr>
+            <td>{{r[1]}}</td>
+            <td>{{r[2]}}</td>
+            <td>{{r[3]}}</td>
+            <td>{{r[4]}}</td>
+            <td>{{r[5]}}</td>
+            {% if ulogovan %}
+            <td><a href="/user">Update</a></td>
+            <td><a href="/delete/{{r[1]}}">Delete</a></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

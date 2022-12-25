@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/update/{{rez[1]}}" method="POST">
+        <label for="3">Password</label>
+        <input type="text" name="password" value="{{rez[2]}}" id="3">
+        <br>
+        <label for="2">Email</label>
+        <input type="text" name="email" value="{{rez[2]}}" id="2">
+        <br>
+        {% if rez[4]=='1' %}
+        <label>Godina studija
+            <input type="radio" name="godina_studija" value="1" id="" checked>1
+            <input type="radio" name="godina_studija" value="2" id="">2
+            <input type="radio" name="godina_studija" value="3" id="">3
+            <input type="radio" name="godina_studija" value="4" id="">4
+        </label>
+        {% elif rez[4]=='2' %}
+        <label>Godina studija
+            <input type="radio" name="godina_studija" value="1" id="">1
+            <input type="radio" name="godina_studija" value="2" id="" checked>2
+            <input type="radio" name="godina_studija" value="3" id="">3
+            <input type="radio" name="godina_studija" value="4" id="">4
+        </label>
+        {% elif rez[4]=='3' %}
+        <label>Godina studija
+            <input type="radio" name="godina_studija" value="1" id="">1
+            <input type="radio" name="godina_studija" value="2" id="">2
+            <input type="radio" name="godina_studija" value="3" id="" checked>3
+            <input type="radio" name="godina_studija" value="4" id="">4
+        </label>
+        {% else %}
+        <label>Godina studija
+            <input type="radio" name="godina_studija" value="1" id="">1
+            <input type="radio" name="godina_studija" value="2" id="">2
+            <input type="radio" name="godina_studija" value="3" id="">3
+            <input type="radio" name="godina_studija" value="4" id="" checked>4
+        </label>
+        {% endif %}
+        <br>
+        <input type="submit" name="submit" value="Submit" id="">
+
+    </form>
+</body>
+</html>
